@@ -25,6 +25,7 @@ class Pokemon {
     private var _pokemonURL : String!
     
 
+    // Getters and Setters
     
     var description : String {
         get{
@@ -136,8 +137,6 @@ class Pokemon {
     }
     
     
-    
-    
     var name : String {
         get{
             return _name
@@ -157,6 +156,7 @@ class Pokemon {
     }
     
     
+    // Constructor
     
     init (name:String,pokedexId:Int) {
         self._name = name
@@ -247,13 +247,6 @@ class Pokemon {
                 
             }
         } /// Main Pokemon Alamofire End Loop
-        
-
-        
-        
-        
-        
-        
     }
     
 }

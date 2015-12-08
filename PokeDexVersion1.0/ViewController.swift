@@ -37,21 +37,27 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         
         parsePokemonCSV()
-        //initAudio()
+        initAudio()
         
     }
 
     @IBAction func musicBtnPressed(sender: UIButton) {
         
-        
-        
-        if musicPlayer.playing {
+        if sender.currentImage == UIImage(named: "volume"){
+            volumeBtn.setImage(UIImage(named: "mediumVolume"), forState: .Normal)
+            musicPlayer.volume = 0.25
+        }else if sender.currentImage == UIImage(named: "mediumVolume"){
+            volumeBtn.setImage(UIImage(named: "lowVolume"), forState: .Normal)
+            musicPlayer.volume = 0.1
+        }else if sender.currentImage == UIImage(named: "lowVolume"){
             volumeBtn.setImage(UIImage(named: "mute"), forState: .Normal)
             musicPlayer.pause()
-        } else {
+        }else if sender.currentImage == UIImage(named: "mute"){
             volumeBtn.setImage(UIImage(named: "volume"), forState: .Normal)
+            musicPlayer.volume = 0.5
             musicPlayer.play()
         }
+
     }
     
     func initAudio(){
