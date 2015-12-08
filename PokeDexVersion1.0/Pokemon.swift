@@ -198,8 +198,6 @@ class Pokemon {
                 } else {
                     self.type = ""
                 }
-                print(self.type)
-                
                 if let descArray = dict["descriptions"] as? [Dictionary<String,AnyObject>] where descArray.count > 0 {
                     
                     if let tempUrl = descArray[0]["resource_uri"] {
@@ -212,7 +210,6 @@ class Pokemon {
                             if let descDict = desResult.value as? Dictionary<String,AnyObject> {
                                 if let description = descDict["description"] as? String {
                                     self.description = description
-                                    print(self.description)
                                 }
                             }
                             completed()
@@ -239,27 +236,12 @@ class Pokemon {
                                 if let level = evolutions[0]["level"] as? Int {
                                     self.nextEvolutionLevel = "\(level)"
                                 }
-                                print("id---> \(self.nextEvolutionId)")
-                                print("Level --->\(self.nextEvolutionLevel)")
-                                print("Text --->\(self.nextEvolutionTxt)")
                             }
                         }else {
-                            self.nextEvolutionId = ""
-                            self.nextEvolutionLevel = ""
-                            self.nextEvolutionTxt = ""
-                            print("id---> \(self.nextEvolutionId)")
-                            print("Level --->\(self.nextEvolutionLevel)")
-                            print("Text --->\(self.nextEvolutionTxt)")
                             
                         }
                     }
                 } else {
-                    self.nextEvolutionId = ""
-                    self.nextEvolutionLevel = ""
-                    self.nextEvolutionTxt = ""
-                    print("id---> \(self.nextEvolutionId)")
-                    print("Level --->\(self.nextEvolutionLevel)")
-                    print("Text --->\(self.nextEvolutionTxt)")
 
                 }
                 
